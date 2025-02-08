@@ -1,0 +1,6 @@
+name: PizzaElement
+version: '1.0'
+main: me.Pizza.PizzaElement
+api-version: '1.21'
+commands:
+  test:
