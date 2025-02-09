@@ -51,7 +51,7 @@ public class AttackListener implements Listener {
 
 		// Get the elements of the attack
 		DamageMetadata damage = event.getDamage();
-		Element[] attackElements = damage.	collectElements().toArray(new Element[0]);
+		Element[] attackElements = damage.collectElements().toArray(new Element[0]);
 
 		// If attack doesn't have any element
 		if (attackElements.length == 0) {
