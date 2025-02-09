@@ -51,17 +51,18 @@ public class AttackListener implements Listener {
 
 		// Get the elements of the attack
 		DamageMetadata damage = event.getDamage();
-		Element[] attackElements = damage.collectElements().toArray(new Element[0]);
+		Element[] attackElements = damage.	collectElements().toArray(new Element[0]);
 
+		// If attack doesn't have any element
 		if (attackElements.length == 0) {
 			return;
 		}
 
 		for (Element attackElement : attackElements) {
 			if (elementInteractions.containsKey(mobElement) && elementInteractions.get(mobElement).containsKey(attackElement)) {
-				double baseDamage = damage.getDamage(attackElement);
-				double bonusDamage = elementInteractions.get(mobElement).get(attackElement);
-				damage.add(baseDamage * bonusDamage, attackElement, DamageType.SKILL);
+				double initialDamage = damage.getDamage(attackElement);
+				double extraDamage = elementInteractions.get(mobElement).get(attackElement);
+				damage.add(initialDamage * extraDamage, attackElement, DamageType.SKILL);
 			}
 		}
 	}
