@@ -1,0 +1,4 @@
+name: PizzaElemental
+version: '1.0'
+main: me.Pizza.PizzaElemental
+api-version: '1.21'
